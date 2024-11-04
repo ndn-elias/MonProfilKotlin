@@ -14,6 +14,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
 import androidx.compose.runtime.getValue
 import androidx.navigation.compose.NavHost
@@ -54,6 +55,7 @@ class MainActivity : ComponentActivity() {
                                             contentDescription = "Catalogue des films"
                                         )
                                     },
+                                    label = {Text("Films")},
                                     selected = currentDestination?.hasRoute<DestinationFilm>() == true,
                                     onClick = { navController.navigate(DestinationFilm()) })
 
@@ -65,6 +67,7 @@ class MainActivity : ComponentActivity() {
                                             contentDescription = "Catalogue des séries"
                                         )
                                     },
+                                    label = {Text("Séries")},
                                     selected = currentDestination?.hasRoute<DestinationSerie>() == true,
                                     onClick = { navController.navigate(DestinationSerie()) })
 
@@ -73,11 +76,14 @@ class MainActivity : ComponentActivity() {
                                     icon = {
                                         Icon(
                                             imageVector = Icons.Filled.Star,
-                                            contentDescription = "Catalogue des acteurs"
+                                            contentDescription = "Catalogue des acteurs",
+
                                         )
                                     },
+                                    label = {Text("Acteurs")},
                                     selected = currentDestination?.hasRoute<DestinationActeur>() == true,
                                     onClick = { navController.navigate(DestinationActeur()) })
+
 
                             }
 
